@@ -9,19 +9,20 @@ const UploadForm = () => {
   const [predictedBreed, setPredictedBreed] = useState("");
 
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
-    setUploadedImage(URL.createObjectURL(e.target.files[0]));
+    const uploadedFile = e.target.files[0];
+    setFile(uploadedFile);
+    setUploadedImage(URL.createObjectURL(uploadedFile));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("clicked");
+    
     const formData = new FormData();
     formData.append("file", file);
-  
+
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/upload/", // Update this URL with your AWS endpoint URL
+        "http://127.0.0.1:5000/upload", 
         formData,
         {
           headers: {
@@ -29,26 +30,20 @@ const UploadForm = () => {
           },
         }
       );
-  
-      console.log("API Response:", response); // Log the full response for debugging
-  
+      
       if (response && response.data) {
         setLabels(response.data.labels);
-        setPredictedBreed(
-          "This looks like a lovely dog breed! Consider adopting.😉"
-        );
+        setPredictedBreed("This looks like a lovely dog breed! Consider adopting.😉");
       } else {
-        console.log("Response or response data is undefined");
+        setMsg("Response or response data is undefined");
       }
     } catch (error) {
       setMsg(error.response.data.message || "Error occurred while processing the image.");
-      console.error("Error response:", error.response); // Log error response for debugging
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <div className="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#FF7F50_100%)]"></div>
       <h1 className="text-3xl font-bold mb-8">
         Form to Upload an Image for Dog Breed Detection
       </h1>

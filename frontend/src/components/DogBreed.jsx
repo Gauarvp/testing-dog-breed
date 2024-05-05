@@ -1,6 +1,5 @@
 import React from "react";
 import SingleBreed from "./SingleBreed";
-import Dog from "../assets/dog.jpg";
 import Dog1 from "../assets/download (2).jpeg";
 import Dog2 from "../assets/download.jpeg";
 import Dog3 from "../assets/downloadd.jpeg";
