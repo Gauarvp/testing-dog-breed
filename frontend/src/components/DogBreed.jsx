@@ -1,6 +1,14 @@
 import React from "react";
 import SingleBreed from "./SingleBreed";
-import Dog from "../assets/dog-1.png";
+import Dog from "../assets/dog.jpg";
+import Dog1 from "../assets/download (2).jpeg";
+import Dog2 from "../assets/download.jpeg";
+import Dog3 from "../assets/downloadd.jpeg";
+import Dog4 from "../assets/bulldog.jpeg";
+import Dog5 from "../assets/poodle.jpeg";
+import Dog6 from "../assets/beagle.jpeg";
+import Dog7 from "../assets/boxer.jpeg";
+import Dog8 from "../assets/dash.jpeg";
 
 const DogBreed = () => {
   return (
@@ -20,35 +28,35 @@ const DogBreed = () => {
         <SingleBreed
           name="Chihuahua "
           desc="The spirited and alert Chihuahua"
-          img={Dog}
+          img={Dog2}
         />
         <SingleBreed
           name="Bloodhound "
           desc="The steadfast and determined Bloodhound."
-          img={Dog}
+          img={Dog3}
         />
         <SingleBreed
-          img={Dog}
+          img={Dog4}
           name="Bulldog "
           desc="The resilient and affectionate Bulldog."
         />
         <SingleBreed
-          img={Dog}
+          img={Dog5}
           name="Poodle "
           desc="The graceful and intelligent Poodle."
         />
         <SingleBreed
-          img={Dog}
+          img={Dog6}
           name="Beagle "
           desc="The merry and curious Beagle."
         />
         <SingleBreed
-          img={Dog}
+          img={Dog7}
           name="Boxer "
           desc="The courageous and energetic Boxer."
         />
         <SingleBreed
-          img={Dog}
+          img={Dog8}
           name="Dachshund "
           desc="The loyal and spunky Dachshund."
         />

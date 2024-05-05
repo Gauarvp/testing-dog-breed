@@ -1,7 +1,9 @@
 import React from "react";
 import SingleUser from "./SingleUser";
 import Sai from "../assets/sai.jpeg";
-import Dog from "../assets/dog.jpg";
+import Doggy from "../assets/image.png";
+import Dog10 from "../assets/vishnu.jpg";
+import Doggy11 from "../assets/varun.jpg";
 
 const About = () => {
   return (
@@ -12,27 +14,27 @@ const About = () => {
       <div className="flex flex-wrap gap-10 justify-center -mx-4">
         <SingleUser
           name="Sai Gaurav P"
-          groupNo="1"
+          groupNo="24"
           SRN="1JT20CS121"
           img={Sai}
         />
         <SingleUser
-          name="Teammate-1"
-          groupNo="1"
-          SRN="PES1UG20ME160"
-          img={Dog}
+          name="Varun Kumar D"
+          groupNo="24"
+          SRN="1JT20CS108"
+          img={Doggy11}
         />
         <SingleUser
-          name="Teammate-2"
-          groupNo="1"
-          SRN="PES1UG20CS121"
-          img={Dog}
+          name="Varsha S"
+          groupNo="24"
+          SRN="1JT20SC107"
+          img={Doggy}
         />
         <SingleUser
-          name="Teammate-3"
-          groupNo="1"
-          SRN="PES1UG20EC241"
-          img={Dog}
+          name="Vishnu Prasad"
+          groupNo="24"
+          SRN="1JT20CS111"
+          img={Dog10}
         />
       </div>
     </div>

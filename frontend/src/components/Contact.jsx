@@ -1,10 +1,17 @@
 import React from "react";
 
 const Contact = () => {
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    // Perform the email sending logic here
+    // For demonstration purposes, we'll display a pop-up message to confirm that the mail has been "sent"
+    window.alert('Your message has been sent!');
+  };
+
   return (
     <div className="max-w-screen-xl mx-auto pt-20">
-      <section className="bg-white ">
-        <h1 class="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-[#8B4513] to-[#FF7F50] text-transparent bg-clip-text">
+      <section className="bg-white">
+        <h1 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-[#8B4513] to-[#FF7F50] text-transparent bg-clip-text">
           Contact Us
         </h1>
 
@@ -15,8 +22,8 @@ const Contact = () => {
           <form action="#" className="space-y-8">
             <div>
               <label
-                for="email"
-                className="block mb-2 text-sm font-medium text-gray-900 "
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium text-gray-900"
               >
                 Your email
               </label>
@@ -30,8 +37,8 @@ const Contact = () => {
             </div>
             <div>
               <label
-                for="subject"
-                className="block mb-2 text-sm font-medium text-gray-900 "
+                htmlFor="subject"
+                className="block mb-2 text-sm font-medium text-gray-900"
               >
                 Subject
               </label>
@@ -45,8 +52,8 @@ const Contact = () => {
             </div>
             <div className="sm:col-span-2">
               <label
-                for="message"
-                className="block mb-2 text-sm font-medium text-gray-900 "
+                htmlFor="message"
+                className="block mb-2 text-sm font-medium text-gray-900"
               >
                 Your message
               </label>
@@ -59,6 +66,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
+              onClick={handleSendMessage} // Call handleSendMessage function on button click
               className="px-6 py-3 bg-[#FF7F50] text-white rounded-md shadow-md mr-4 hover:bg-primary-dark font-semibold"
             >
               Send message

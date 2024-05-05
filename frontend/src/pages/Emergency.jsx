@@ -41,8 +41,9 @@ const Emergency = () => {
             </p>
           </div>
           <div>
+            
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15554.39211696929!2d77.52674218715819!3d12.933537299999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3fba7661f4b7%3A0x7c9fbbe99ef9e71!2sSWASTHYA%20PET%20CLINIC!5e0!3m2!1sen!2sin!4v1714834015719!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0370843936744!2d77.50938912585593!3d12.84088016772917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae40f716f6495b%3A0xb9d12e9452b7a883!2sJyothy%20Institute%20Of%20Technology%2C%20Bengaluru%2C%20Thathaguni%2C%20Karnataka%20560062!5e0!3m2!1sen!2sin!4v1714923936308!5m2!1sen!2sin"
               width="600"
               height="450"
               allowfullscreen=""

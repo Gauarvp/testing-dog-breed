@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 from PIL import Image
@@ -66,6 +66,7 @@ def upload_file():
     )['CustomLabels']
     
     return jsonify({'labels': labels})
+
 
 chat_history = []
 

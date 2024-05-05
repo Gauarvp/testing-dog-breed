@@ -15,12 +15,13 @@ const UploadForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("clicked");
     const formData = new FormData();
     formData.append("file", file);
-
+  
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/upload",
+        "http://127.0.0.1:5000/upload/", // Update this URL with your AWS endpoint URL
         formData,
         {
           headers: {
@@ -28,18 +29,20 @@ const UploadForm = () => {
           },
         }
       );
-
+  
+      console.log("API Response:", response); // Log the full response for debugging
+  
       if (response && response.data) {
         setLabels(response.data.labels);
-        // Set a generic description based on the predicted breed
         setPredictedBreed(
           "This looks like a lovely dog breed! Consider adopting.😉"
         );
       } else {
-        // Handle the case where the response or response data is undefined
+        console.log("Response or response data is undefined");
       }
     } catch (error) {
-      setMsg(error.response.data.message);
+      setMsg(error.response.data.message || "Error occurred while processing the image.");
+      console.error("Error response:", error.response); // Log error response for debugging
     }
   };
 
