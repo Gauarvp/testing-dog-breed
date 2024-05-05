@@ -13,7 +13,7 @@ const About = () => {
         <SingleUser
           name="Sai Gaurav P"
           groupNo="1"
-          SRN="PES1UG20CS141"
+          SRN="1JT20CS121"
           img={Sai}
         />
         <SingleUser

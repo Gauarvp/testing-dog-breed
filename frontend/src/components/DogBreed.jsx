@@ -14,8 +14,8 @@ const DogBreed = () => {
       <div className="flex flex-wrap justify-center -mx-4">
         <SingleBreed
           name="Golden Retriever"
-          desc=" The friendly and intelligent Golden Retriever"
-          img={Dog}
+          desc=" The friendlly and intelligent Golden Retriever"
+          img={Dog1}
         />
         <SingleBreed
           name="Chihuahua "

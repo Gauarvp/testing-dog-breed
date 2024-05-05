@@ -9,6 +9,7 @@ function Chatbot() {
     if (user_input) {
       try {
         const response = await fetch("http://localhost:5000/chatbot", {
+          mode:'cors',
           method: "POST",
           headers: {
             "Content-Type": "application/json",
