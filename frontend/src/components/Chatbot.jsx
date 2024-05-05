@@ -30,8 +30,11 @@ function Chatbot() {
 
   return (
     <div className="h-screen">
+      <h1 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-[#8B4513] to-[#FF7F50] text-transparent bg-clip-text">
+        Chatbot
+      </h1>
       <div className="max-w-full h-full m-4 p-4 bg-gray-100 rounded shadow ">
-        <div className="h-[28rem] overflow-y-auto">
+        <div className="h-[20rem] overflow-y-auto">
           {chatHistory.map((chat, index) => (
             <div
               key={index}
@@ -56,7 +59,7 @@ function Chatbot() {
           />
           <button
             type="submit"
-            className="bg-green-500 text-white rounded-r p-2"
+            className="bg-[#FF7F50] text-white rounded-r p-2"
           >
             Submit
           </button>

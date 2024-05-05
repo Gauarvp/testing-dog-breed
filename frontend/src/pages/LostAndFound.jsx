@@ -1,4 +1,5 @@
 import React from "react";
+import QRCode from "qrcode.react";
 
 const LostAndFound = () => {
   // Dummy data for the dog details
@@ -17,27 +18,32 @@ const LostAndFound = () => {
         Lost and Found
       </h1>
 
-      <div className="bg-white p-8 rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold mb-4">Dog Information</h2>
-        <p>
-          <span className="font-semibold">Name:</span> {dogDetails.name}
-        </p>
-        <p>
-          <span className="font-semibold">Breed:</span> {dogDetails.breed}
-        </p>
-        <p>
-          <span className="font-semibold">Owner:</span> {dogDetails.ownerName}
-        </p>
-        <p>
-          <span className="font-semibold">Contact:</span> {dogDetails.contact}
-        </p>
-        <p>
-          <span className="font-semibold">Status:</span> {dogDetails.status}
-        </p>
-        <p>
-          <span className="font-semibold">Last Seen Location:</span>{" "}
-          {dogDetails.lastSeenLocation}
-        </p>
+      <div className="bg-white p-8 rounded-lg shadow-md flex items-center gap-14">
+        <div className="bg-white p-8 rounded-lg shadow-md">
+          <QRCode value="Your data here" />
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold mb-4">Dog Information</h2>
+          <p>
+            <span className="font-semibold">Name:</span> {dogDetails.name}
+          </p>
+          <p>
+            <span className="font-semibold">Breed:</span> {dogDetails.breed}
+          </p>
+          <p>
+            <span className="font-semibold">Owner:</span> {dogDetails.ownerName}
+          </p>
+          <p>
+            <span className="font-semibold">Contact:</span> {dogDetails.contact}
+          </p>
+          <p>
+            <span className="font-semibold">Status:</span> {dogDetails.status}
+          </p>
+          <p>
+            <span className="font-semibold">Last Seen Location:</span>{" "}
+            {dogDetails.lastSeenLocation}
+          </p>
+        </div>
       </div>
 
       {/* Additional relevant details */}

@@ -1,5 +1,6 @@
 import React from "react";
 import SingleBreed from "./SingleBreed";
+import Dog from "../assets/dog-1.png";
 
 const DogBreed = () => {
   return (
@@ -14,26 +15,43 @@ const DogBreed = () => {
         <SingleBreed
           name="Golden Retriever"
           desc=" The friendly and intelligent Golden Retriever"
+          img={Dog}
         />
         <SingleBreed
           name="Chihuahua "
           desc="The spirited and alert Chihuahua"
+          img={Dog}
         />
         <SingleBreed
           name="Bloodhound "
           desc="The steadfast and determined Bloodhound."
+          img={Dog}
         />
         <SingleBreed
+          img={Dog}
           name="Bulldog "
           desc="The resilient and affectionate Bulldog."
         />
         <SingleBreed
+          img={Dog}
           name="Poodle "
           desc="The graceful and intelligent Poodle."
         />
-        <SingleBreed name="Beagle " desc="The merry and curious Beagle." />
-        <SingleBreed name="Boxer " desc="The courageous and energetic Boxer." />
-        <SingleBreed name="Dachshund " desc="The loyal and spunky Dachshund." />
+        <SingleBreed
+          img={Dog}
+          name="Beagle "
+          desc="The merry and curious Beagle."
+        />
+        <SingleBreed
+          img={Dog}
+          name="Boxer "
+          desc="The courageous and energetic Boxer."
+        />
+        <SingleBreed
+          img={Dog}
+          name="Dachshund "
+          desc="The loyal and spunky Dachshund."
+        />
       </div>
     </div>
   );
