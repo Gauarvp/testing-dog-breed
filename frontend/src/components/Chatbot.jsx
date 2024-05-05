@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function Chatbot() {
   const [chatHistory, setChatHistory] = useState([]);
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [chatHistory]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,7 +9,6 @@ function Chatbot() {
     if (user_input) {
       try {
         const response = await fetch("http://localhost:5000/chatbot", {
-          // Assuming Flask server is running on localhost:5000
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -33,44 +28,40 @@ function Chatbot() {
     }
   };
 
-  const scrollToBottom = () => {
-    const element = document.getElementById("chat-end");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <div className="flex flex-col h-screen bg-gray-100 p-8">
-      <div className="chat-history flex-1 overflow-y-auto mb-4">
-        {chatHistory.map((chat, index) => (
-          <div key={index} className="mb-2">
-            <div className="text-left">
-              <span className="bg-gray-200 p-2 rounded-lg inline">
-                {chat[0]} {/* User input */}
-              </span>
-              <span className="bg-white p-2 rounded-lg inline">
-                {chat[1]} {/* Chatbot response */}
-              </span>
+    <div className="h-screen">
+      <div className="max-w-full h-full m-4 p-4 bg-gray-100 rounded shadow ">
+        <div className="h-[28rem] overflow-y-auto">
+          {chatHistory.map((chat, index) => (
+            <div
+              key={index}
+              className={`${
+                index % 2 === 0
+                  ? "bg-blue-100 text-blue-800"
+                  : "bg-slate-400 text-gray-800"
+              } rounded p-2 mb-2`}
+            >
+              <p>{chat[0]}</p>
+              <p>{chat[1]}</p>
             </div>
-          </div>
-        ))}
-        <div id="chat-end"></div>
+          ))}
+        </div>
+        <form onSubmit={handleSubmit} className="flex mt-[12rem]">
+          <input
+            type="text"
+            className="flex-1 flex-col rounded-l p-2"
+            name="query"
+            placeholder="Enter a query"
+            required
+          />
+          <button
+            type="submit"
+            className="bg-green-500 text-white rounded-r p-2"
+          >
+            Submit
+          </button>
+        </form>
       </div>
-      <form onSubmit={handleSubmit} className="flex">
-        <input
-          type="text"
-          className="rounded-full p-4 flex-1 mr-4"
-          name="query"
-          placeholder="Type your message..."
-        />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white rounded-full p-4 cursor-pointer"
-        >
-          Send
-        </button>
-      </form>
     </div>
   );
 }
